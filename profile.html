@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Profile - Hallucina*</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+        }
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+    }
+    document.addEventListener("click", (e) => {
+        const menu = document.getElementById("menu");
+        const button = document.querySelector(".menu-button");
+        if (!menu.contains(e.target) && !button.contains(e.target)) {
+            menu.classList.remove("open");
+        }
+        });
+</script>
+    <body class="page-profile">
+        <nav class="nav">
+            <a class="logo" href="index.html">
+                <img src="images/Hallucinaロゴ透過.PNG" alt="Hallucinaロゴ">
+            </a>
+            <button class="menu-button" onclick="toggleMenu()" aria-label="メニュー">
+                ☰
+            </button>
+        </nav>
+        <div id="menu" class="menu">
+            <a href="index.html">Top</a>
+            <a href="profile.html">Profile</a>
+            <a href="works.html">Works</a>
+            <a href="download.html">Download</a>
+            <a href="notes.html">Notes</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <!-- サークル説明（中央揃え） -->
+        <section class="circle-intro">
+            <h1>Hallucina*</h1>
+            <p>藤咲すみによる個人サークル<br>
+            「芸術は抒情であって初めて芸術足り得る」を信条に音楽制作を行なっています</p>
+            </p>
+        </section>
+        <!-- 個人プロフィール -->
+        <section class="profile card">
+            <img
+                class="profile-icon"
+                src="images/藤咲すみアイコン.jpg"
+                alt="藤咲すみアイコン">
+            <div class="profile-text">
+                <h2>藤咲すみ</h2>
+                <p>
+                    作詞/作曲/編曲/ギター/ベース<br>
+                    INFP寄りのENFJ<br>
+                    ハリネズミが好き
+                </p>
+                <div class="profile-sns">
+                    <a href="https://x.com/sumi_haven" target="_blank">X</a>
+                    <a href="http://www.youtube.com/@fujisakisumi" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </section>
+    </section>
+    </body>
+</html>

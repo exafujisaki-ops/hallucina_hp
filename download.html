@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Download - Hallucina*</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+        }
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+    }
+    document.addEventListener("click", (e) => {
+        const menu = document.getElementById("menu");
+        const button = document.querySelector(".menu-button");
+        if (!menu.contains(e.target) && !button.contains(e.target)) {
+            menu.classList.remove("open");
+        }
+        });
+</script>
+
+    <body class="page-download">
+        <nav class="nav">
+            <a class="logo" href="index.html">
+                <img src="images/Hallucinaロゴ透過.PNG" alt="Hallucinaロゴ">
+            </a>
+            <button class="menu-button" onclick="toggleMenu()" aria-label="メニュー">
+                ☰
+            </button>
+        </nav>
+        <div id="menu" class="menu">
+            <a href="index.html">Top</a>
+            <a href="profile.html">Profile</a>
+            <a href="works.html">Works</a>
+            <a href="download.html">Download</a>
+            <a href="notes.html">Notes</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <h1>Download</h1>
+        <section class="rule card">
+            <h2>利用規約</h2>
+            <p>・こちらのデータの使用は非営利での利用に限ります。<br>
+            ・ピッチやテンポの変更といった改変はご遠慮ください。<br>
+            ・こちらのデータを利用した作品を投稿する場合、藤咲すみの名前をご記載ください。
+        </p>
+        </section>
+        <section class="download card">
+            <a href="配布データ/あなたの幸せになれないのなら.zip"download>
+                あなたの幸せになれないのなら feat.菜ノ / Hallucina* - Inst2MIX</a>
+        </section>
+    </body>

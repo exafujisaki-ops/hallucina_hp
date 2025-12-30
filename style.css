@@ -1,0 +1,423 @@
+body {
+    background:
+    url("images/HP背景青.jpg");
+    background-size: cover;        /* 画面いっぱいに */
+    background-position: center;   /* 中央基準 */
+    background-repeat: no-repeat;  /* 繰り返さない */
+    background-attachment: fixed;
+    color: #111;
+    font-family:
+        "Hiragino Mincho ProN",
+        "Hiragino Mincho Pro",
+        "ヒラギノ明朝 ProN",
+        "ヒラギノ明朝 Pro",
+        "Yu Mintyo",
+        "游明朝",
+        serif;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    body { padding: 20px; }
+    .logo img { height: 90px; }
+}
+
+
+/* スプラッシュ全画面 */
+.splash {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: grid;
+    place-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 800ms ease;
+}
+
+/* フェードアウト状態 */
+.splash.hide {
+    opacity: 0;
+}
+
+/* ロゴ（画像） */
+.splash-logo {
+    width: min(360px, 70vw);
+    height: auto;
+}
+
+p, h1, h2 {
+    text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.logo img {
+    height: 130px;
+    width: auto;
+    display: block;
+}
+
+.menu-button {
+    margin-left: auto;
+    font-size: 32px;
+    padding: 10px 14px;
+
+    background: rgba(255, 255, 255, 0.3);   /* ←カードと同系 */
+    border: 1px solid rgba(5, 5, 5, 1);
+    border-radius: 12px;
+    
+    color: #111;
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(2px); /* 対応ブラウザのみ */
+}
+
+.menu-button:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.menu-button:active {
+    transform: translateY(1px);
+}
+
+.menu {
+    margin-top: 40px;
+    position: absolute;
+    top: 72px;
+    right: 20px;
+
+    width: 220px;
+    background:rgba(255, 255, 255, 0.3);
+    border: 1px solid #444;
+    border-radius: 12px;
+
+    padding: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  /* 最初は隠す（ふわっと出す準備） */
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+/* 表示中 */
+.menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ChatGPTの左メニューっぽい縦リスト */
+.menu a {
+    display: block;
+    padding: 10px 12px;
+
+    color: #111;
+    text-decoration: none;
+    border-radius: 8px;
+
+  /* 横書きで縦に並ぶ（勝手にそうなる） */
+    line-height: 1.2;
+}
+
+.menu a:last-child {
+    margin-bottom: 0;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+    
+}
+
+/* h1だよ */
+.page-top h1{
+    font-size: 36px;
+}
+.page-profile h1{
+    font-size: 36px;
+    text-align: center;
+}
+.page-works h1{
+    font-size: 36px;
+    text-align: center;
+}
+.page-download h1{
+    font-size: 36px;
+    text-align: center;
+}
+.page-contact h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+/* h2だよ */
+.page-top h2{
+    font-size: 36px;
+}
+.page-profile h2{
+    font-size: 36px;
+    text-align: center;
+}
+.page-works h2{
+    font-size: 36px;
+    text-align: center;
+}
+.page-download h2{
+    font-size: 27px;
+    text-align: center;
+}
+.page-contact h2{
+    font-size: 36px;
+    text-align: center;
+}
+
+/* pだよ */
+.page-top p{
+    font-size: 18px;
+}
+.page-profile p{
+    font-size: 18px;
+    text-align: center;
+}
+.page-works p{
+    font-size: 18px;
+    text-align: center;
+}
+.page-download p{
+    font-size: 18px;
+    text-align: left;
+}
+.page-contact p{
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-video {
+    width: 100%;
+    max-width: 1100px;      /* PCでの最大サイズ */
+    margin: 40px auto;     /* 上下余白＋中央寄せ */
+    margin-top: 2px;
+}
+
+.hero-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;  /* これが超重要 */
+    height: auto;
+    border-radius: 12px;
+}
+
+.hero-title {
+    font-size: 36px ;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.hero-text {
+    font-size: 18px;
+    text-align: center;
+    color: #000000;
+}
+.circle-intro {
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 48px;
+}
+
+.circle-intro h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.circle-intro p {
+    font-size: 18px;
+    color: #000000;
+}
+
+.profile {
+    display: flex;
+    align-items: center;   /* 縦位置を揃える */
+    gap: 24px;             /* 左右の間隔 */
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.profile-text h2 {
+    font-size: 27px;
+    color: #000000;
+    text-align: left;
+}
+
+.profile-text p {
+    font-size: 18px;
+    color: #000000;
+    text-align: left;
+}
+
+.profile-icon {
+    width: 200px;        /* ← 好きなサイズに */
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-sns {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+.profile-sns a {
+    font-size: 14px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.profile-sns a:hover {
+    color:#a0a0a0;
+    text-decoration: underline;
+}
+
+.card {
+    width: 100%;
+    max-width: 1100px;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #555;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    margin-bottom: 20px;
+}
+
+.rule {
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.download {
+    display: flex;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.download a {
+    color: #111;
+}
+.download a:hover {
+    color: #a0a0a0;
+    text-decoration: underline;
+}
+
+/* Work切り替え */
+.tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center; 
+    margin: 20px 0 28px;
+}
+
+.tab {
+    appearance: none;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.55);
+    padding: 10px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    
+    color: #111;
+    font-size: 14px;
+}
+
+.tab:hover {
+    background: rgba(255,255,255,0.75);
+}
+
+.tab.is-active {
+    background: rgba(255,255,255,0.92);
+    border-color: rgba(0,0,0,0.18);
+}
+
+.video-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 12px 0;
+}
+
+.video-wrap iframe {
+    display: block;       /* 下の謎余白対策 */
+    width: 100%;
+    max-width: 1100px;    /* 動画の上限サイズ（好きに） */
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 12px;
+}
+
+.works-list {
+    display: grid;
+    gap: 32px;
+    justify-items: center;
+}
+
+.work {
+    width: 100%;
+    max-width: 1100px;   /* 好みで 800〜1100 くらい */
+    margin-bottom: 40px;
+    border: 1px solid #555;
+    border-radius: 12px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px)
+}
+
+.notes-list {
+    display: grid;
+    gap: 32px;
+    justify-items: center;
+}
+
+.notes-date { font-size: 12px; opacity: 0.7;text-align: right;}
+.notes-title { font-size: 20px; margin: 12px 0; text-align: center; }
+.notes-text { line-height: 1.8;text-align: center;}
+
+.link{
+    margin: 40px auto;
+    max-width: 400px;
+    border: 1px solid #555;
+    border-radius: 12px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px)
+}
+
+.contact-card{
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-mail {
+    display: inline-block;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #111;
+    text-decoration: none;
+}
+
+.contact-mail:hover {
+    background: rgba(255,255,255,0.85);
+    color: #a0a0a0;
+}

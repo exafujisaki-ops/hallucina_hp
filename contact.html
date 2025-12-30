@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact - Hallucina*</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+        }
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+    }
+    document.addEventListener("click", (e) => {
+        const menu = document.getElementById("menu");
+        const button = document.querySelector(".menu-button");
+        if (!menu.contains(e.target) && !button.contains(e.target)) {
+            menu.classList.remove("open");
+        }
+        });
+</script>
+
+    <body class="page-contact">
+        <nav class="nav">
+            <a class="logo" href="index.html">
+                <img src="images/Hallucinaロゴ透過.PNG" alt="Hallucinaロゴ">
+            </a>
+            <button class="menu-button" onclick="toggleMenu()" aria-label="メニュー">
+                ☰
+            </button>
+        </nav>
+        <div id="menu" class="menu">
+            <a href="index.html">Top</a>
+            <a href="profile.html">Profile</a>
+            <a href="works.html">Works</a>
+            <a href="download.html">Download</a>
+            <a href="notes.html">Notes</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <h1>Contact</h1>
+
+        <section class="card contact-card">
+            <p>ご連絡はメールからお願いします。<br>
+            exafujisaki@gmail.com</p>
+            <a class="contact-mail" href="mailto:exafujisaki@gmail.com?subject=Contact%20from%20Hallucina*&body=%E3%81%94%E7%94%A8%E4%BB%B6%EF%BC%9A%0D%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%EF%BC%9A%0D%0A">
+                メールを作成する</a>
+            </section>
+
+            <section class="link card">
+                <ul>
+                    <p>その他リンク</p>
+                    <li><a href="https://www.youtube.com/@fujisakisumi">YouTube</a></li>
+                    <li><a href="https://www.nicovideo.jp/user/62471221">ニコニコ動画</a></li>
+                    <li><a href="https://x.com/sumi_haven">Twitter(現X)</a></li>
+                    <li><a href="https://www.instagram.com/sumi_haven/">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@fujisaki_sumi">TikTok</a></li>
+                </ul>
+    </section>
+    </body>
+</html>

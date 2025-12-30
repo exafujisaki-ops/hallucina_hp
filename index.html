@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hallucina*</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+        }
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+    }
+    document.addEventListener("click", (e) => {
+        const menu = document.getElementById("menu");
+        const button = document.querySelector(".menu-button");
+        if (!menu.contains(e.target) && !button.contains(e.target)) {
+            menu.classList.remove("open");
+        }
+        });
+</script>
+
+<script>
+window.addEventListener("load", () => {
+    const splash = document.getElementById("splash");
+    // 表示しておく時間（ミリ秒）
+    const showMs = 500;
+
+    // フェード時間（CSSの500msと合わせる）
+    const fadeMs = 800;
+
+    setTimeout(() => {
+        splash.classList.add("hide");
+        setTimeout(() => {
+            splash.style.display = "none";
+        }, fadeMs);
+    }, showMs);
+    });
+</script>
+
+
+    <body class="page-top">
+        
+        <div id="splash" class="splash">
+            <img class="splash-logo" src="images/Hallucinaロゴ透過白.PNG" alt="ロゴ">
+        </div>
+
+        <nav class="nav">
+            <a class="logo" href="index.html">
+                <img src="images/Hallucinaロゴ透過.PNG" alt="Hallucinaロゴ">
+            </a>
+            <button class="menu-button" onclick="toggleMenu()" aria-label="メニュー">
+                ☰
+            </button>
+        </nav>
+        <div id="menu" class="menu">
+            <a href="index.html">Top</a>
+            <a href="profile.html">Profile</a>
+            <a href="works.html">Works</a>
+            <a href="download.html">Download</a>
+            <a href="notes.html">Notes</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <h2 class="hero-title">New Release</h2>
+        <p class="hero-text">あなたの幸せになれないのなら feat.菜ノ / Hallucina*</p>
+
+        <section class="hero-video">
+            <iframe
+            src="https://www.youtube.com/embed/HulOQUI2aks?si=ySJVnTGg9UTkRsHi"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </section>
+
+    </body>
+</html>

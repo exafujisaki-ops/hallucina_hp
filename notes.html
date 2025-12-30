@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact - Hallucina*</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+        }
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+    }
+    document.addEventListener("click", (e) => {
+        const menu = document.getElementById("menu");
+        const button = document.querySelector(".menu-button");
+        if (!menu.contains(e.target) && !button.contains(e.target)) {
+            menu.classList.remove("open");
+        }
+        });
+</script>
+
+    <body class="page-notes">
+        <nav class="nav">
+            <a class="logo" href="index.html">
+                <img src="images/Hallucinaロゴ透過.PNG" alt="Hallucinaロゴ">
+            </a>
+            <button class="menu-button" onclick="toggleMenu()" aria-label="メニュー">
+                ☰
+            </button>
+        </nav>
+        <div id="menu" class="menu">
+            <a href="index.html">Top</a>
+            <a href="profile.html">Profile</a>
+            <a href="works.html">Works</a>
+            <a href="download.html">Download</a>
+            <a href="notes.html">Notes</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="notes-list">
+        <h1>Notes</h1>
+        <article class="card notes">
+            <p class="notes-date">2025.12.31</p>
+            <h2 class="notes-title">HP制作中</h2>
+            <p class="notes-text">難しいけど楽しい〜</p>
+    </article>
+    </div>
+
+    </body>
+</html>
