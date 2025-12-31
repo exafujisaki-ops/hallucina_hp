@@ -50,7 +50,7 @@ body::before{
     background: #000;
     display: grid;
     place-items: center;
-    z-index: 99999;
+    z-index: 999999;
     opacity: 1;
     transition: opacity 800ms ease;
 }
