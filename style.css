@@ -79,7 +79,7 @@ p, h1, h2 {
     align-items: center;
     gap: 16px;
     margin-bottom: 24px;
-    position: relative; z-index: 9999;  /* メニューボタンも含めて最前面 */
+    position: relative; z-index: 10000;  /* メニューボタンも含めて最前面 */
 }
 
 .logo img {
@@ -92,15 +92,13 @@ p, h1, h2 {
     margin-left: auto;
     font-size: 32px;
     padding: 10px 14px;
-    position: fixed; z-index: 10000;   /* ← absoluteじゃなくfixedが安定 */
+    z-index: 10000;   /* ← absoluteじゃなくfixedが安定 */
 
     background: rgba(255, 255, 255, 0.3);   /* ←カードと同系 */
     border: 1px solid rgba(5, 5, 5, 1);
     border-radius: 12px;
-    
     color: #111;
     cursor: pointer;
-
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(2px); /* 対応ブラウザのみ */
 }
