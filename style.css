@@ -92,6 +92,7 @@ p, h1, h2 {
     margin-left: auto;
     font-size: 32px;
     padding: 10px 14px;
+    position: fixed; z-index: 10000;   /* ← absoluteじゃなくfixedが安定 */
 
     background: rgba(255, 255, 255, 0.3);   /* ←カードと同系 */
     border: 1px solid rgba(5, 5, 5, 1);
