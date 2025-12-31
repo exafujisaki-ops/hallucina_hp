@@ -55,6 +55,7 @@ p, h1, h2 {
     align-items: center;
     gap: 16px;
     margin-bottom: 24px;
+    position: relative; z-index: 9999;  /* メニューボタンも含めて最前面 */
 }
 
 .logo img {
@@ -89,17 +90,18 @@ p, h1, h2 {
 
 .menu {
     margin-top: 40px;
-    position: absolute;
+    position: fixed; z-index: 10000;   /* ← absoluteじゃなくfixedが安定 */
     top: 72px;
     right: 20px;
 
     width: 220px;
-    background:rgba(255, 255, 255, 0.3);
     border: 1px solid #444;
     border-radius: 12px;
-
+    background: rgba(255,255,255,0.92); /* 透けすぎ防止 */
+    box-shadow: 0 14px 40px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 8px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 
   /* 最初は隠す（ふわっと出す準備） */
     opacity: 0;
@@ -352,7 +354,9 @@ p, h1, h2 {
 .video-wrap {
     display: flex;
     justify-content: center;
-    margin: 12px 0;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .video-wrap iframe {
@@ -421,3 +425,31 @@ p, h1, h2 {
     background: rgba(255,255,255,0.85);
     color: #a0a0a0;
 }
+
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease;
+    z-index: 9998;
+}
+.menu.open + .overlay,
+.overlay.open{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+* { box-sizing: border-box; }
+
+html, body { width: 100%; overflow-x: hidden; }
+
+body { padding: 40px; } /* ←既存のままでOK */
+
+@media (max-width: 600px){
+    body { padding: 16px; }
+}
+
+.card, .work { max-width: 100%; }
+img, iframe { max-width: 100%; }
