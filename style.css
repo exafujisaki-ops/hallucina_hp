@@ -17,6 +17,26 @@ body {
     padding: 20px;
 }
 
+html, body{
+    height: 100%;
+}
+
+body{
+    position: relative;
+    background: none; /* ← いまの background:url(...) は一旦やめる */
+}
+
+/* “固定背景”レイヤー */
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("images/HP背景青.jpg") center / cover no-repeat;
+    z-index: -1;          /* コンテンツより後ろ */
+    transform: translateZ(0); /* iOSで安定しやすい */
+}
+
+
 @media (max-width: 600px) {
     body { padding: 20px; }
     .logo img { height: 90px; }
@@ -30,14 +50,18 @@ body {
     background: #000;
     display: grid;
     place-items: center;
-    z-index: 9999;
+    z-index: 99999;
     opacity: 1;
     transition: opacity 800ms ease;
 }
 
+.splash{ pointer-events: auto; }
+
+
 /* フェードアウト状態 */
 .splash.hide {
     opacity: 0;
+    pointer-events: none; /* ← これ追加 */
 }
 
 /* ロゴ（画像） */
