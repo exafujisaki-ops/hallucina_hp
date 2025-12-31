@@ -400,7 +400,7 @@ p, h1, h2 {
 
 .work {
     width: 100%;
-    max-width: 1100px;   /* 好みで 800〜1100 くらい */
+    max-width: 800px;   /* 好みで 800〜1100 くらい */
     margin-bottom: 40px;
     border: 1px solid #555;
     border-radius: 12px;
